@@ -1,0 +1,40 @@
+{
+  "name": "detect-phonenumber",
+  "version": "1.0.1",
+  "description": "Detect phonenumber from string.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --config=jest.config.json",
+    "lint": "eslint . --ext .ts",
+    "test:ci": "jest --ci",
+    "prepublish": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keeeparis/detect-phonenumber.git"
+  },
+  "keywords": [
+    "js",
+    "phonenumber"
+  ],
+  "author": "Vladimir Trotsenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keeeparis/detect-phonenumber/issues"
+  },
+  "homepage": "https://github.com/keeeparis/detect-phonenumber#readme",
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "@types/node": "^18.6.4",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "jest": "^28.1.3",
+    "prettier": "^2.7.1",
+    "ts-jest": "^28.0.7",
+    "typescript": "^4.7.4"
+  }
+}

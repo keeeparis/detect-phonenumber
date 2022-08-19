@@ -2,10 +2,13 @@
   "transform": {
     "^.+\\.tsx?$": "ts-jest"
   },
-  "testRegex": "/test/.*",
+  "testRegex": "test/*",
   "testEnvironment": "node",
   "moduleFileExtensions": [
     "ts",
     "js"
+  ],
+  "modulePathIgnorePatterns": [
+    "<rootDir>/dist"
   ]
 }

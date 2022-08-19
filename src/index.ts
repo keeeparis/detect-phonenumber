@@ -22,13 +22,12 @@ export const splitTextByPhonenumber = (matchAllArray: RegExpMatchArray[]): Split
 
     if (idx === arr.length - 1) {
       const lastElem = el['input']!.slice(lastIndexOfNumber, el['input']!.length);
-      result.push(
-        { value: text, type: 'string' },
-        { value: number, type: 'number' },
-        { value: lastElem, type: 'string' }
-      );
+      text && result.push({ value: text, type: 'string' });
+      result.push({ value: number, type: 'number' });
+      lastElem && result.push({ value: lastElem, type: 'string' });
     } else {
-      result.push({ value: text, type: 'string' }, { value: number, type: 'number' });
+      text && result.push({ value: text, type: 'string' });
+      result.push({ value: number, type: 'number' });
     }
   });
 

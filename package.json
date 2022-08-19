@@ -1,6 +1,6 @@
 {
   "name": "detect-phonenumber",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Detect phonenumber from string.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,8 +9,7 @@
     "test": "jest --config=jest.config.json",
     "lint": "eslint . --ext .ts",
     "test:ci": "jest --ci",
-    "prepublish": "npm test",
-    "publish": "tsc && npm publish"
+    "prepublish": "npm test"
   },
   "repository": {
     "type": "git",

@@ -3,7 +3,7 @@ import { detectPhonenumberFromText } from '../src/index';
 describe('Testing detectPhonenumberFromText', () => {
   it('should return false if no phone number found', () => {
     const text = 'This is a test';
-    expect(detectPhonenumberFromText(text)).toBe(false);
+    expect(detectPhonenumberFromText(text, true)).toBe(false);
   });
 
   it('should return array of splitted string if found', () => {
@@ -28,14 +28,12 @@ describe('Testing detectPhonenumberFromText', () => {
         text: 'some +77750002248',
         value: [
           { value: 'some ', type: 'string' },
-          { value: '+77750002248', type: 'number' },
-          { value: '', type: 'string' }
+          { value: '+77750002248', type: 'number' }
         ]
       },
       {
         text: '+7 701 772 6172 text',
         value: [
-          { value: '', type: 'string' },
           { value: '+7 701 772 6172', type: 'number' },
           { value: ' text', type: 'string' }
         ]
@@ -46,14 +44,12 @@ describe('Testing detectPhonenumberFromText', () => {
           { value: 'asd ', type: 'string' },
           { value: '+7 701 772 6172', type: 'number' },
           { value: ' text ', type: 'string' },
-          { value: '87051009263', type: 'number' },
-          { value: '', type: 'string' }
+          { value: '87051009263', type: 'number' }
         ]
       },
       {
         text: '+7 775 065 00 11 text',
         value: [
-          { value: '', type: 'string' },
           { value: '+7 775 065 00 11', type: 'number' },
           { value: ' text', type: 'string' }
         ]
@@ -61,7 +57,6 @@ describe('Testing detectPhonenumberFromText', () => {
       {
         text: '+7(775)0650011 text',
         value: [
-          { value: '', type: 'string' },
           { value: '+7(775)0650011', type: 'number' },
           { value: ' text', type: 'string' }
         ]
@@ -69,7 +64,6 @@ describe('Testing detectPhonenumberFromText', () => {
       {
         text: '+7-775-065-00-11 text',
         value: [
-          { value: '', type: 'string' },
           { value: '+7-775-065-00-11', type: 'number' },
           { value: ' text', type: 'string' }
         ]
@@ -77,7 +71,6 @@ describe('Testing detectPhonenumberFromText', () => {
       {
         text: '+7 775.065.00.11 text',
         value: [
-          { value: '', type: 'string' },
           { value: '+7 775.065.00.11', type: 'number' },
           { value: ' text', type: 'string' }
         ]
